@@ -47,6 +47,8 @@ local.properties
 node_modules
 *.log
 .nvm
+.expo/
+npm-debug.*
 
 # OS X
 .DS_Store
