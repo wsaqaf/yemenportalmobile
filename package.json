@@ -19,8 +19,15 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/vector-icons": "^4.0.0",
+    "color": "^1.0.3",
     "expo": "^17.0.0",
+    "lottie-react-native": "^1.1.1",
+    "moment": "^2.18.1",
     "react": "16.0.0-alpha.6",
-    "react-native": "^0.44.0"
+    "react-native": "^0.44.0",
+    "react-native-branch": "^2.0.0-beta.3",
+    "react-native-extended-stylesheet": "^0.4.0",
+    "react-native-maps": "^0.14.0"
   }
 }
