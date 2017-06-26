@@ -37,41 +37,16 @@ buck-out
 /ReactAndroid/src/main/gen
 
 # Android
-*.apk
-*.ap_
-*.dex
-*.class
-bin/
-gen/
-out/
-.gradle/
-/gradle
-build/
-/build
-gradlew*
-gradle.xml
-/local.properties
-proguard/
-/proguard
-# Log Files
-*.log
-.navigation/
-captures/
-/captures
+.idea
+.gradle
+local.properties
 *.iml
-.idea/
-.DS_Store
-*.jks
-gradle.properties
-
-# iOS
+/android/
 
 # Node
 node_modules
 *.log
 .nvm
-.expo/
-npm-debug.*
 
 # OS X
 .DS_Store
