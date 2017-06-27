@@ -21,6 +21,9 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+# Vscode
+.vscode/
+
 # Gradle
 /build/
 /RNTester/android/app/build/
@@ -37,11 +40,32 @@ buck-out
 /ReactAndroid/src/main/gen
 
 # Android
-.idea
-.gradle
-local.properties
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+.gradle/
+/android/gradle
+/android/keystores
+build/
+/build
+gradlew*
+gradle.xml
+/local.properties
+proguard/
+/proguard
+*.log
+.navigation/
+captures/
+/captures
 *.iml
-/android/
+.idea/
+.DS_Store
+*.jks
+gradle.properties
 
 # Node
 node_modules

@@ -5,7 +5,7 @@ import styles from './styles';
 
 const WebViewer = ({ url }) => (
   <View style={styles.container}>
-    <WebView style={styles.containerWebView} source={{ uri: url }} />
+    <WebView style={styles.containerWebView} source={{ uri: url }} javaScriptEnabled mixedContentMode={'always'} />
   </View>
 );
 
