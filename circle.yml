@@ -5,6 +5,8 @@ machine:
     JAVA_OPTS: "-Xms512m -Xmx4096m"
     ANDROID_HOME: /usr/local/android-sdk-linux
     TERM: "dumb"
+  node:
+    version: 6.1.0
   java:
     version: oraclejdk8
 dependencies:
