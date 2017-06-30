@@ -1,0 +1,22 @@
+fastlane_version "1.109.0"
+
+generated_fastfile_id "63768676-3a78-46fc-a268-16b5e08490c4"
+
+default_platform :android
+
+platform :android do
+
+  lane :beta do
+    gradle(
+        task: "assemble",
+        build_type: "Debug",
+        project_dir: "android/"
+      )
+
+    crashlytics(
+      api_token: "5768db8cf56848f565e4cfc8e5ac02bd933f1930",
+      build_secret: "54092549baf7261ad1f5f5812ab2c9bb9b1c4c09e0046a8abf22868da13a17ee"
+    )
+  end
+
+ end
