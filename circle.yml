@@ -20,6 +20,7 @@ dependencies:
   pre:
     - ./circle_dependencies.sh
     - gem install fastlane
+    - echo $ANDROID_KEYSTORE | base64 --decode --ignore-garbage > ${HOME}/${CIRCLE_PROJECT_REPONAME}/android/app/${ANDROID_KEYSTORE_FILE}
   post:
     - fastlane beta
 

@@ -9,7 +9,7 @@ platform :android do
   lane :beta do
     gradle(
         task: "assemble",
-        build_type: "Debug",
+        build_type: "Release",
         project_dir: "android/"
       )
 
