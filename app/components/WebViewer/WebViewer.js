@@ -39,7 +39,8 @@ class WebViewer extends Component {
           }}
           style={styles.containerWebView}
           source={{ uri: this.props.url }}
-          javaScriptEnabled mixedContentMode={'always'}
+          javaScriptEnabled
+          mixedContentMode={'always'}
           onNavigationStateChange={this.onNavigationStateChange}
         />
       </View>

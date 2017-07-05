@@ -4,8 +4,8 @@
   "private": true,
   "devDependencies": {
     "babel-jest": "20.0.3",
-		"babel-preset-react-native": "2.0.0",
-		"jest": "20.0.4",
+    "babel-preset-react-native": "2.0.0",
+    "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.6"
   },
   "scripts": {
@@ -33,6 +33,7 @@
     "prettier-eslint": "^6.2.0",
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.0",
-    "react-native-extended-stylesheet": "^0.4.0"
+    "react-native-extended-stylesheet": "^0.4.0",
+    "react-native-wkwebview-reborn": "^1.6.0"
   }
 }
