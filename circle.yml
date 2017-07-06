@@ -9,7 +9,6 @@ machine:
     version: 6.1.0
   java:
     version: oraclejdk8
-
 dependencies:
   cache_directories:
     - /usr/local/android-sdk-linux/platforms/android-25
@@ -22,8 +21,8 @@ dependencies:
     - gem install fastlane
     - echo $ANDROID_KEYSTORE | base64 --decode --ignore-garbage > ${HOME}/${CIRCLE_PROJECT_REPONAME}/android/app/${ANDROID_KEYSTORE_FILE}
   post:
-    - fastlane beta
-
+    - fastlane android beta
+    - fastlane ios beta
 test:
   override:
     - "true"
