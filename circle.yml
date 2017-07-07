@@ -22,7 +22,6 @@ dependencies:
     - echo $ANDROID_KEYSTORE | base64 --decode --ignore-garbage > ${HOME}/${CIRCLE_PROJECT_REPONAME}/android/app/${ANDROID_KEYSTORE_FILE}
   post:
     - fastlane android beta
-    - fastlane ios beta
 test:
   override:
     - "true"
