@@ -1,4 +1,4 @@
-git_url "https://github.com/datarockets/certificates"
-type "development"
+git_url "git@github.com:datarockets/certificates.git"
+git_branch "yemenportal"
+username "dima.zhlobo@gmail.com"
 team_id "M5MBYBFCK5"
-username "chyrta@me.com"

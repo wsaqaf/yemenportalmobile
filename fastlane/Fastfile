@@ -3,7 +3,6 @@ fastlane_version "1.109.0"
 default_platform :android
 
 platform :android do
-
   desc "Submit new Android build of Yemen Portal to Fabric Beta"
   lane :beta do
     gradle(
@@ -17,29 +16,14 @@ platform :android do
       build_secret: ENV["FABRIC_BUILD_SECRET"]
     )
   end
-
 end
 
 platform :ios do
-
   desc "Submit new iOS build of Yemen Portal to Fabric Beta"
   lane :beta do
-
-    # Creating keychain with certificates
-    create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_PASSWORD"],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true
-    )
-
     # Matching certificates
     match(
       type: "adhoc",
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_PASSWORD"],
       readonly: true
     )
 
@@ -47,19 +31,19 @@ platform :ios do
     gym(
       scheme: "yemenportalmobile",
       configuration: "Ad Hoc",
-      sdk: "iphoneos10.2",
+      sdk: "iphoneos10.3",
       clean: true,
       include_bitcode: false,
       include_symbols: true,
-      export_method: "ad-hoc"
+      export_method: "ad-hoc",
+      project: "ios/yemenportalmobile.xcodeproj"
     )
 
     # Pushing to Fabric Beta
-    crashlytics(
-      api_token: ENV["FABRIC_API_TOKEN"],
-      build_secret: ENV["FABRIC_BUILD_SECRET"]
-    )
-
+    # crashlytics(
+    #   api_token: ENV["FABRIC_API_TOKEN"],
+    #   build_secret: ENV["FABRIC_BUILD_SECRET"],
+    #   crashlytics_path: "ios/Pods/Crashlytics"
+    # )
   end
-
 end

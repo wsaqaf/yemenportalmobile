@@ -20,6 +20,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+*.app.dSYM.zip
 
 # Vscode
 .vscode/
@@ -79,3 +80,6 @@ node_modules
 
 /coverage
 /third-party
+
+# Fastlane
+/fastlane/report.xml
