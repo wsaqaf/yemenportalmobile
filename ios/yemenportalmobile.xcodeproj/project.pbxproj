@@ -22,6 +22,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		32C9041D1F16669000C841F2 /* ExportFabric.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C9041C1F16669000C841F2 /* ExportFabric.m */; };
 		45A94ABB7FA44B1FA3073677 /* libRCTWKWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D80BBF7476484FC898C08F6A /* libRCTWKWebView.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		74E55BF0E2250B1E661ECE2D /* libPods-yemenportalmobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75306958EB6B44541CF65AFD /* libPods-yemenportalmobile.a */; };
@@ -257,6 +258,8 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		146B5E1390374411834EADDA /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		32B056FF1F156F8C003E35A8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		32C903FF1F16662800C841F2 /* ExportFabric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExportFabric.h; path = yemenportalmobile/ExportFabric.h; sourceTree = "<group>"; };
+		32C9041C1F16669000C841F2 /* ExportFabric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExportFabric.m; path = yemenportalmobile/ExportFabric.m; sourceTree = "<group>"; };
 		3BC875B21A266F1D4343BC92 /* Pods-yemenportalmobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yemenportalmobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-yemenportalmobile/Pods-yemenportalmobile.release.xcconfig"; sourceTree = "<group>"; };
 		4AEF030792F845AF96BBFAD2 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				32C903FF1F16662800C841F2 /* ExportFabric.h */,
+				32C9041C1F16669000C841F2 /* ExportFabric.m */,
 			);
 			name = yemenportalmobile;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				7C99916F3A098DA04E5A7A1E /* [CP] Embed Pods Frameworks */,
 				A8807A10E1B9509BE1012755 /* [CP] Copy Pods Resources */,
+				32B056E31F156D0D003E35A8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -905,6 +911,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		32B056E31F156D0D003E35A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5768db8cf56848f565e4cfc8e5ac02bd933f1930 54092549baf7261ad1f5f5812ab2c9bb9b1c4c09e0046a8abf22868da13a17ee";
+		};
 		7C99916F3A098DA04E5A7A1E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -952,6 +971,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				32C9041D1F16669000C841F2 /* ExportFabric.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
