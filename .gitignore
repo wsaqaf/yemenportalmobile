@@ -83,3 +83,5 @@ node_modules
 
 # Fastlane
 /fastlane/report.xml
+
+/ios/Pods
