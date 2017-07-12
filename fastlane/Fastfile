@@ -40,10 +40,10 @@ platform :ios do
     )
 
     # Pushing to Fabric Beta
-    crashlytics(
-      api_token: ENV["FABRIC_API_TOKEN"],
-      build_secret: ENV["FABRIC_BUILD_SECRET"],
-      crashlytics_path: "ios/Pods/Crashlytics"
-    )
+    # crashlytics(
+    #   api_token: ENV["FABRIC_API_TOKEN"],
+    #   build_secret: ENV["FABRIC_BUILD_SECRET"],
+    #   crashlytics_path: "ios/Pods/Crashlytics"
+    # )
   end
 end

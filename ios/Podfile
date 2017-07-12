@@ -1,6 +1,0 @@
-platform :ios, "8.0"
-
-target "yemenportalmobile" do
-  pod 'Fabric'
-  pod 'Crashlytics'
-end
