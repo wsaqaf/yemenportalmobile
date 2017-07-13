@@ -6,6 +6,6 @@ import { WebViewer } from '../components/WebViewer';
 
 export default () =>
   <Container>
-    <StatusBar translucent={false} barStyle="light-content" />
+    <StatusBar translucent={true} backgroundColor={'transparent'} barStyle='light-content' />
     <WebViewer url={'https://beta.yemenportal.net'} />
   </Container>;
