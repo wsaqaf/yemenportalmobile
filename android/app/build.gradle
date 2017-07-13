@@ -106,11 +106,23 @@ android {
         }
     }
     signingConfigs {
-        release {
-            storeFile file(System.getenv("ANDROID_KEYSTORE_FILE"))
-            storePassword System.getenv("ANDROID_KEYSTORE_PWD")
-            keyAlias System.getenv("ANDROID_KEY_ALIAS_RELEASE")
-            keyPassword System.getenv("ANDROID_KEYSTORE_RELEASE_PWD")
+        if (System.getenv("CI")) {
+            release {
+                storeFile file(System.getenv("ANDROID_KEYSTORE_FILE"))
+                storePassword System.getenv("ANDROID_KEYSTORE_PWD")
+                keyAlias System.getenv("ANDROID_KEY_ALIAS_RELEASE")
+                keyPassword System.getenv("ANDROID_KEYSTORE_RELEASE_PWD")
+            }
+        } else {
+            release {
+                def keystorePropertiesFile= rootProject.file("keystores/" + "release.keystore.properties")
+                def keystoreProperties = new Properties()
+                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+                storeFile file(keystoreProperties['key.store'])
+                storePassword keystoreProperties['key.store.password']
+                keyAlias keystoreProperties['key.alias']
+                keyPassword keystoreProperties['key.alias.password']
+            }
         }
     }
     splits {
