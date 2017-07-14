@@ -1,6 +1,7 @@
 package com.yemenportalmobile;
 
 import com.facebook.react.ReactActivity;
+import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 
 public class MainActivity extends ReactActivity {
 
