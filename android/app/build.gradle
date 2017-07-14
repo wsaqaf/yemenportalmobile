@@ -104,6 +104,16 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        if (System.getenv("CI")) {
+            manifestPlaceholders = [onesignal_app_id: System.getenv("ONESIGNAL_APP_ID"),
+                                    onesignal_google_project_number: System.getenv("ONESIGNAL_GOOGLE_PROJECT_NUMBER")]
+        } else {
+            def onesignalPropertiesFile= rootProject.file("keystores/" + "onesignal.properties")
+            def onesignalProperties = new Properties()
+            keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+            manifestPlaceholders = [onesignal_app_id: onesignalProperties['onesignal.app.id'],
+                                    onesignal_google_project_number: onesignalProperties['onesignal.google.project.number']]
+        }
     }
     signingConfigs {
         if (System.getenv("CI")) {
