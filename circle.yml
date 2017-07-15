@@ -6,15 +6,16 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
     TERM: "dumb"
   node:
-    version: 6.1.0
+    version: 6.11.1
   java:
     version: oraclejdk8
 dependencies:
   cache_directories:
     - /usr/local/android-sdk-linux/platforms/android-25
     - /usr/local/android-sdk-linux/build-tools/25.0.3
+    - /usr/local/android-sdk-linux/build-tools/23.0.1
     - /usr/local/android-sdk-linux/extras/android/m2repository
-    - ~/android
+    - /usr/local/android-sdk-linux/extras/google/m2repository
     - ~/.android
   pre:
     - ./circle_dependencies.sh

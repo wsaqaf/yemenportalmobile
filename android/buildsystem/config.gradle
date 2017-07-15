@@ -1,7 +1,7 @@
 ext.configuration = [
         applicationId : "com.yemenportalmobile",
         versionMajor: 0,
-        versionMinor: 1,
+        versionMinor: 2,
         versionPatch: 0,
         versionClassifier: "",
         minimumSdk: 16,
