@@ -66,6 +66,9 @@ captures/
 *.jks
 *.keystore
 
+# iOS
+Keys.plist
+
 # Node
 node_modules
 *.log
