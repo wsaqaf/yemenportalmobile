@@ -20,6 +20,10 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+*.app.dSYM.zip
+
+# Vscode
+.vscode/
 
 # Gradle
 /build/
@@ -37,11 +41,33 @@ buck-out
 /ReactAndroid/src/main/gen
 
 # Android
-.idea
-.gradle
-local.properties
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+/android/keystores
+build/
+/build
+/android/local.properties
+/android/.gradle
+.gradle/
+proguard/
+/proguard
+*.log
+.navigation/
+captures/
+/captures
 *.iml
-/android/
+.idea/
+.DS_Store
+*.jks
+*.keystore
+
+# iOS
+Keys.plist
 
 # Node
 node_modules
@@ -57,3 +83,6 @@ node_modules
 
 /coverage
 /third-party
+
+# Fastlane
+/fastlane/report.xml

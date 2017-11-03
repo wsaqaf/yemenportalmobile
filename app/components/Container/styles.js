@@ -1,4 +1,7 @@
+import { NativeModules, Platform } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
+const { StatusBarManager } = NativeModules;
 
 export default EStyleSheet.create({
   container: {
@@ -6,5 +9,6 @@ export default EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '$white',
+    paddingTop: (Platform.OS === 'ios') ? 20 : StatusBarManager.HEIGHT,
   },
 });

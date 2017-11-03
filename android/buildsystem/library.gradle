@@ -1,0 +1,13 @@
+ext.version = [
+        support         : "25.3.0",
+        react           : "+",
+        crashlytics     : "2.6.8"
+]
+
+def version = ext.version;
+
+ext.library = [
+        support_compat      : "com.android.support:appcompat-v7:${version.support}",
+        react               : "com.facebook.react:react-native:${version.react}",
+        crashlytics         : "com.crashlytics.sdk.android:crashlytics:${version.crashlytics}@aar"
+]

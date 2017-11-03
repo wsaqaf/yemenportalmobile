@@ -1,0 +1,28 @@
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx4096m -XX:+HeapDumpOnOutOfMemoryError"'
+    JAVA_OPTS: "-Xms512m -Xmx4096m"
+    ANDROID_HOME: /usr/local/android-sdk-linux
+    TERM: "dumb"
+  node:
+    version: 6.11.1
+  java:
+    version: oraclejdk8
+dependencies:
+  cache_directories:
+    - /usr/local/android-sdk-linux/platforms/android-25
+    - /usr/local/android-sdk-linux/build-tools/25.0.3
+    - /usr/local/android-sdk-linux/build-tools/23.0.1
+    - /usr/local/android-sdk-linux/extras/android/m2repository
+    - /usr/local/android-sdk-linux/extras/google/m2repository
+    - ~/.android
+  pre:
+    - ./circle_dependencies.sh
+    - gem install fastlane
+    - echo $ANDROID_KEYSTORE | base64 --decode --ignore-garbage > ${HOME}/${CIRCLE_PROJECT_REPONAME}/android/app/${ANDROID_KEYSTORE_FILE}
+  post:
+    - fastlane android beta
+test:
+  override:
+    - "true"
