@@ -8,7 +8,7 @@ export default EStyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '$black',
+    backgroundColor: '$white',
     paddingTop: (Platform.OS === 'ios') ? 20 : StatusBarManager.HEIGHT,
   },
 });
