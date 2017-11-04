@@ -68,6 +68,7 @@ captures/
 
 # iOS
 Keys.plist
+ios/*.framework/
 
 # Node
 node_modules

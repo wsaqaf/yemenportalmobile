@@ -39,6 +39,8 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8469077AE77842798911A7A1 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 021E5637132047D9BF13ED28 /* libRCTOneSignal.a */; };
 		95D5E105293C4390B96976E4 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AEF030792F845AF96BBFAD2 /* libRNVectorIcons.a */; };
+		FEA1F9CA1FADFC8600B6E4DC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA1F9AC1FADFC8400B6E4DC /* Fabric.framework */; };
+		FEA1F9CB1FADFC8600B6E4DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA1F9C91FADFC8600B6E4DC /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +287,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		C129FFD52D46431DBB248C4A /* RCTWKWebView.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTWKWebView.xcodeproj; path = "../node_modules/react-native-wkwebview-reborn/ios/RCTWKWebView.xcodeproj"; sourceTree = "<group>"; };
 		D80BBF7476484FC898C08F6A /* libRCTWKWebView.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTWKWebView.a; sourceTree = "<group>"; };
+		FEA1F9AC1FADFC8400B6E4DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		FEA1F9C91FADFC8600B6E4DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		FEC1EF611F9100AE00EB2634 /* yemenportalmobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = yemenportalmobile.entitlements; path = yemenportalmobile/yemenportalmobile.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,7 +315,9 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				FEA1F9CB1FADFC8600B6E4DC /* Crashlytics.framework in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				FEA1F9CA1FADFC8600B6E4DC /* Fabric.framework in Frameworks */,
 				95D5E105293C4390B96976E4 /* libRNVectorIcons.a in Frameworks */,
 				45A94ABB7FA44B1FA3073677 /* libRCTWKWebView.a in Frameworks */,
 				8469077AE77842798911A7A1 /* libRCTOneSignal.a in Frameworks */,
@@ -517,6 +523,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FEA1F9C91FADFC8600B6E4DC /* Crashlytics.framework */,
+				FEA1F9AC1FADFC8400B6E4DC /* Fabric.framework */,
 				13B07FAE1A68108700A75B9A /* yemenportalmobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* yemenportalmobileTests */,
@@ -585,6 +593,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				FEA1F9CC1FADFCE400B6E4DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -645,7 +654,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = M5MBYBFCK5;
+						DevelopmentTeam = 2AX22F7G5F;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1008,6 +1017,19 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		FEA1F9CC1FADFCE400B6E4DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Fabric.framework/run\" 5768db8cf56848f565e4cfc8e5ac02bd933f1930 54092549baf7261ad1f5f5812ab2c9bb9b1c4c09e0046a8abf22868da13a17ee";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1129,7 +1151,11 @@
 				CODE_SIGN_ENTITLEMENTS = yemenportalmobile/yemenportalmobile.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = M5MBYBFCK5;
+				DEVELOPMENT_TEAM = 2AX22F7G5F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-onesignal/ios/**";
 				INFOPLIST_FILE = yemenportalmobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1140,8 +1166,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.yemenportal;
 				PRODUCT_NAME = yemenportalmobile;
-				PROVISIONING_PROFILE = "0f7873a5-9b03-435a-9e3b-241441f0f486";
+				PROVISIONING_PROFILE = "c024ce3c-f20d-40c5-9de3-d31b1f4fe5c9";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development net.yemenportal";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1153,7 +1180,11 @@
 				CODE_SIGN_ENTITLEMENTS = yemenportalmobile/yemenportalmobile.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M5MBYBFCK5;
+				DEVELOPMENT_TEAM = 2AX22F7G5F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-onesignal/ios/**";
 				INFOPLIST_FILE = yemenportalmobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1164,8 +1195,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.yemenportal;
 				PRODUCT_NAME = yemenportalmobile;
-				PROVISIONING_PROFILE = "b2406dac-1e20-4136-81b6-2ab3751d3445";
+				PROVISIONING_PROFILE = "73ff8e60-ee01-4ad9-838c-d8fc478d352e";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc net.yemenportal";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

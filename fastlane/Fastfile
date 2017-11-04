@@ -3,8 +3,10 @@ fastlane_version "1.109.0"
 default_platform :android
 
 platform :android do
+
   desc "Submit new Android build of Yemen Portal to Fabric Beta"
   lane :beta do
+
     gradle(
         task: "assemble",
         build_type: "Release",
@@ -15,35 +17,62 @@ platform :android do
       api_token: ENV["FABRIC_API_TOKEN"],
       build_secret: ENV["FABRIC_BUILD_SECRET"]
     )
+
   end
+
 end
 
 platform :ios do
+
   desc "Submit new iOS build of Yemen Portal to Fabric Beta"
   lane :beta do
-    # Matching certificates
+
     match(
       type: "adhoc",
-      readonly: true
+      clone_branch_directly: true,
+      force_for_new_devices: true
     )
 
-    # Building an app
     gym(
       scheme: "yemenportalmobile",
-      configuration: "Ad Hoc",
-      sdk: "iphoneos10.3",
+      export_method: "ad-hoc",
+      export_options: {
+        provisioningProfiles: {
+          "net.yemenportal" => "match AdHoc net.yemenportal"
+        }
+      },
       clean: true,
       include_bitcode: false,
       include_symbols: true,
-      export_method: "ad-hoc",
       project: "ios/yemenportalmobile.xcodeproj"
     )
 
-    # Pushing to Fabric Beta
     crashlytics(
       api_token: ENV["FABRIC_API_TOKEN"],
       build_secret: ENV["FABRIC_BUILD_SECRET"],
-      crashlytics_path: "ios/Pods/Crashlytics"
     )
+
   end
+
+  desc "Build release version of Yemen Portal"
+  lane :release do
+    
+    match(type: "appstore")
+
+    gym(
+      scheme: "yemenportalmobile",
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: {
+          "net.yemenportal" => "match AppStore net.yemenportal"
+        }
+      },
+      clean: true,
+      include_bitcode: false,
+      include_symbols: true,
+      project: "ios/yemenportalmobile.xcodeproj"
+    )
+
+  end
+
 end

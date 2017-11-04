@@ -14,7 +14,7 @@ xcode-select --install
 <tr>
 <th width="33%"><a href="http://brew.sh">Homebrew</a></td>
 <th width="33%">Installer Script</td>
-<th width="33%">Rubygems</td>
+<th width="33%">RubyGems</td>
 </tr>
 <tr>
 <td width="33%" align="center">macOS</td>
@@ -44,6 +44,11 @@ Submit new Android build of Yemen Portal to Fabric Beta
 fastlane ios beta
 ```
 Submit new iOS build of Yemen Portal to Fabric Beta
+### ios release
+```
+fastlane ios release
+```
+Build release version of Yemen Portal
 
 ----
 
